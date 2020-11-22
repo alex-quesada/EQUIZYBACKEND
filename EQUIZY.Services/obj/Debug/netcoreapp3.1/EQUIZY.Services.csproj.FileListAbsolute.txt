@@ -1,0 +1,24 @@
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Services.deps.json
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Services.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Services.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.csprojAssemblyReference.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.AssemblyInfoInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.AssemblyInfo.cs
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.csproj.CoreCompileInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.csproj.CopyComplete
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.pdb
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Services.deps.json
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Services.dll
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Services.pdb
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.csprojAssemblyReference.cache
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.AssemblyInfoInputs.cache
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.AssemblyInfo.cs
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.csproj.CoreCompileInputs.cache
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.csproj.CopyComplete
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.dll
+C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Services\obj\Debug\netcoreapp3.1\EQUIZY.Services.pdb
