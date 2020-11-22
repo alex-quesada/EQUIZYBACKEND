@@ -1,0 +1,8 @@
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netstandard2.0\EQUIZY.Core.deps.json
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netstandard2.0\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netstandard2.0\EQUIZY.Core.AssemblyInfoInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netstandard2.0\EQUIZY.Core.AssemblyInfo.cs
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netstandard2.0\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netstandard2.0\EQUIZY.Core.csproj.CoreCompileInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netstandard2.0\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netstandard2.0\EQUIZY.Core.pdb

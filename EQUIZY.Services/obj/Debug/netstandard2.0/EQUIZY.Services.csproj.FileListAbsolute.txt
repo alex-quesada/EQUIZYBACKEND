@@ -1,0 +1,12 @@
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netstandard2.0\EQUIZY.Services.deps.json
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netstandard2.0\EQUIZY.Services.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netstandard2.0\EQUIZY.Services.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netstandard2.0\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\bin\Debug\netstandard2.0\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.csprojAssemblyReference.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.AssemblyInfoInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.AssemblyInfo.cs
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.csproj.CoreCompileInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.csproj.CopyComplete
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Services\obj\Debug\netstandard2.0\EQUIZY.Services.pdb
