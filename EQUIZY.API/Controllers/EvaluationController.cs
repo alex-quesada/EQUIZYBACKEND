@@ -78,6 +78,17 @@ namespace EQUIZY.API.Controllers
                 await _evaluationService.GetAllEvaluationsByUserId(userGuid));
             return data;
         }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<EvaluationResource>> GetEvaluationById(int id)
+        {
+            var evaluation = await _evaluationService.GetEvaluationById(id);
+            if (evaluation == null)
+            {
+                return NotFound();
+            }
+            var evaluationResource = _mapper.Map<Evaluation, EvaluationResource>(evaluation);
+            return Ok(evaluationResource);
+        }
         [HttpPost("create")]
         public async Task<ActionResult<EvaluationResource>> CreateEvaluation([FromBody] EvaluationResource model)
         {
