@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EQUIZY.Services.Services
 {
-    class QuestionListService : IQuestionListService
+    public class QuestionListService : IQuestionListService
     {
         private readonly IUnitOfWork _unitOfWork;
 

@@ -67,6 +67,7 @@ namespace EQUIZY.API
             services.AddTransient<IEvaluationService, EvaluationService>();
             services.AddTransient<IProfessorProfessorEvaluationListService, ProfessorEvaluationListService>();
             services.AddTransient<IQuizQuestionService, QuizQuestionService>();
+            services.AddTransient<IQuestionListService, QuestionListService>();
             services.AddTransient<IAnswerService, AnswerService>();
             services.AddTransient<IAnswerListService, AnswerListService>();
             services.AddIdentity<AppUser, AppUserRole>(options =>
