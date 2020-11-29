@@ -135,9 +135,14 @@ namespace EQUIZY.API.Controllers
         [HttpPost("question/create")]
         public async Task<ActionResult<QuestionResource>> CreateQuestion([FromBody] CreateQuestionResource model)
         {
+            var token = Request.Headers["Authorization"].ToString();
+            var userToken = new JwtSecurityTokenHandler().ReadJwtToken(token);
+            var userId = userToken.Claims.ToArray()[0].Value.ToString();
+            var userGuid = new Guid(userId);
             foreach (var quest in model.Questions)
             {
                 var questionToAdd = _mapper.Map<QuestionResource, QuizQuestion>(quest);
+                questionToAdd.CreatedById = userGuid;
                 var questionResult = await _quizQuestionService.CreateQuestion(questionToAdd);
                 if (questionResult != null)
                 {
