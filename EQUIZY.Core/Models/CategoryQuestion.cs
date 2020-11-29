@@ -11,6 +11,5 @@ namespace EQUIZY.Core.Models
         [Required]
         [StringLength(50)]
         public string Category { get; set; }
-        public List<EvaluationQuestion> EvaluationQuestions { get; set; }
     }
 }

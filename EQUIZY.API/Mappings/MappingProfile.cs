@@ -26,6 +26,8 @@ namespace EQUIZY.API.Mappings
             CreateMap<TopicEvaluation, TopicEvaluationResource>().ReverseMap();
             CreateMap<CategoryEvaluation, CategoryEvaluationResource>().ReverseMap();
             CreateMap<Evaluation, EvaluationResource>().ReverseMap();
+            CreateMap<QuizQuestion, QuestionResource>().ReverseMap();
+            CreateMap<Answer, AnswerResource>().ReverseMap();
             CreateMap<ProfessorEvaluationList, ProfessorEvaluationListResource>().ReverseMap();
             CreateMap<Composer, ComposerResource>()
                     .ForMember(c => c.Id, opt => opt.MapFrom(c => c.Id.ToString())).ReverseMap();

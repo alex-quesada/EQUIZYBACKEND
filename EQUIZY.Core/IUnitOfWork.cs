@@ -23,6 +23,10 @@ namespace EQUIZY.Core
         ITypeQuestionRepository TypesQuestion { get; }
         IEvaluationRepository Evaluations { get; }
         IProfessorEvaluationListRepository ProfessorEvaluationList { get; }
+        IAnswerRepository Answers { get; }
+        IAnswerListRepository AnswerList { get; }
+        IQuizQuestionRepository QuizQuestions { get; }
+        IQuestionListRepository QuestionList { get; }
         Task<int> CommitAsync();
     }
 }

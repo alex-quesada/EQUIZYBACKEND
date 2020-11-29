@@ -67,22 +67,57 @@ namespace EQUIZY.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AnswerContent")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .IsRequired()
+                        .HasColumnType("varchar(250) CHARACTER SET utf8mb4")
+                        .HasMaxLength(250);
 
                     b.Property<byte>("Correct")
                         .HasColumnType("tinyint unsigned");
 
-                    b.Property<int?>("EvaluationQuestionId")
+                    b.Property<int?>("QuizQuestionId")
                         .HasColumnType("int");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint unsigned");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EvaluationQuestionId");
+                    b.HasIndex("QuizQuestionId");
 
-                    b.ToTable("Answer");
+                    b.ToTable("Answers");
+                });
+
+            modelBuilder.Entity("EQUIZY.Core.Models.AnswerList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AnswerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuizQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnswerId");
+
+                    b.HasIndex("QuizQuestionId");
+
+                    b.ToTable("AnswerList");
                 });
 
             modelBuilder.Entity("EQUIZY.Core.Models.AppUser", b =>
@@ -349,61 +384,6 @@ namespace EQUIZY.Data.Migrations
                     b.ToTable("Evaluations");
                 });
 
-            modelBuilder.Entity("EQUIZY.Core.Models.EvaluationQuestion", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryQuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedById")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<Guid>("CreatedById1")
-                        .HasColumnType("char(36)");
-
-                    b.Property<int?>("EvaluationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Points")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Question")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<byte>("Rating")
-                        .HasColumnType("tinyint unsigned");
-
-                    b.Property<byte>("Status")
-                        .HasColumnType("tinyint unsigned");
-
-                    b.Property<int>("TimeToAnswer")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TopicQuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypeQuestionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryQuestionId");
-
-                    b.HasIndex("CreatedById1");
-
-                    b.HasIndex("EvaluationId");
-
-                    b.HasIndex("TopicQuestionId");
-
-                    b.HasIndex("TypeQuestionId");
-
-                    b.ToTable("EvaluationQuestion");
-                });
-
             modelBuilder.Entity("EQUIZY.Core.Models.ProfessorEvaluationList", b =>
                 {
                     b.Property<int>("Id")
@@ -429,6 +409,89 @@ namespace EQUIZY.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("ProfessorEvaluationList");
+                });
+
+            modelBuilder.Entity("EQUIZY.Core.Models.QuestionList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EvaluationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuizQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EvaluationId");
+
+                    b.HasIndex("QuizQuestionId");
+
+                    b.ToTable("QuestionList");
+                });
+
+            modelBuilder.Entity("EQUIZY.Core.Models.QuizQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("CreatedById")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int?>("EvaluationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("varchar(250) CHARACTER SET utf8mb4")
+                        .HasMaxLength(250);
+
+                    b.Property<byte>("Rating")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.Property<int>("TimeToAnswer")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TopicQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TypeQuestionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryQuestionId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("EvaluationId");
+
+                    b.HasIndex("TopicQuestionId");
+
+                    b.HasIndex("TypeQuestionId");
+
+                    b.ToTable("QuizQuestions");
                 });
 
             modelBuilder.Entity("EQUIZY.Core.Models.StateProvince", b =>
@@ -693,9 +756,24 @@ namespace EQUIZY.Data.Migrations
 
             modelBuilder.Entity("EQUIZY.Core.Models.Answer", b =>
                 {
-                    b.HasOne("EQUIZY.Core.Models.EvaluationQuestion", null)
+                    b.HasOne("EQUIZY.Core.Models.QuizQuestion", null)
                         .WithMany("Answers")
-                        .HasForeignKey("EvaluationQuestionId");
+                        .HasForeignKey("QuizQuestionId");
+                });
+
+            modelBuilder.Entity("EQUIZY.Core.Models.AnswerList", b =>
+                {
+                    b.HasOne("EQUIZY.Core.Models.Answer", "Answer")
+                        .WithMany()
+                        .HasForeignKey("AnswerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EQUIZY.Core.Models.QuizQuestion", "QuizQuestion")
+                        .WithMany()
+                        .HasForeignKey("QuizQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EQUIZY.Core.Models.City", b =>
@@ -734,37 +812,6 @@ namespace EQUIZY.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EQUIZY.Core.Models.EvaluationQuestion", b =>
-                {
-                    b.HasOne("EQUIZY.Core.Models.CategoryQuestion", "CategoryQuestion")
-                        .WithMany("EvaluationQuestions")
-                        .HasForeignKey("CategoryQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EQUIZY.Core.Models.AppUser", "CreatedBy")
-                        .WithMany()
-                        .HasForeignKey("CreatedById1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EQUIZY.Core.Models.Evaluation", null)
-                        .WithMany("EvaluationQuestions")
-                        .HasForeignKey("EvaluationId");
-
-                    b.HasOne("EQUIZY.Core.Models.TopicQuestion", "TopicQuetion")
-                        .WithMany("QuizQuestions")
-                        .HasForeignKey("TopicQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EQUIZY.Core.Models.TypeQuestion", "TypeQuestion")
-                        .WithMany("EvaluationQuestions")
-                        .HasForeignKey("TypeQuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("EQUIZY.Core.Models.ProfessorEvaluationList", b =>
                 {
                     b.HasOne("EQUIZY.Core.Models.Evaluation", "Evaluation")
@@ -776,6 +823,52 @@ namespace EQUIZY.Data.Migrations
                     b.HasOne("EQUIZY.Core.Models.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EQUIZY.Core.Models.QuestionList", b =>
+                {
+                    b.HasOne("EQUIZY.Core.Models.Evaluation", "Evaluation")
+                        .WithMany()
+                        .HasForeignKey("EvaluationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EQUIZY.Core.Models.QuizQuestion", "QuizQuestion")
+                        .WithMany()
+                        .HasForeignKey("QuizQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EQUIZY.Core.Models.QuizQuestion", b =>
+                {
+                    b.HasOne("EQUIZY.Core.Models.CategoryQuestion", "CategoryQuestion")
+                        .WithMany()
+                        .HasForeignKey("CategoryQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EQUIZY.Core.Models.AppUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EQUIZY.Core.Models.Evaluation", null)
+                        .WithMany("QuizQuestions")
+                        .HasForeignKey("EvaluationId");
+
+                    b.HasOne("EQUIZY.Core.Models.TopicQuestion", "TopicQuetion")
+                        .WithMany()
+                        .HasForeignKey("TopicQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EQUIZY.Core.Models.TypeQuestion", "TypeQuestion")
+                        .WithMany()
+                        .HasForeignKey("TypeQuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

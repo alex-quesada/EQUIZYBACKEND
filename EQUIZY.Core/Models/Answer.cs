@@ -9,5 +9,6 @@ namespace EQUIZY.Core.Models
         public int Id { get; set; }
         public string AnswerContent { get; set; }
         public byte Correct { get; set; }
+        public byte Status { get; set; }
     }
 }

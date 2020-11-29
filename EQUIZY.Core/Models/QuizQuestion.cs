@@ -5,21 +5,21 @@ using System.Text;
 
 namespace EQUIZY.Core.Models
 {
-    public class EvaluationQuestion
+    public class QuizQuestion
     {
         public int Id { get; set; }
-        public string CreatedById { get; set; }
-        [Required]
+        public Guid CreatedById { get; set; }
         public AppUser CreatedBy { get; set; }
+        [Required]
         public int TypeQuestionId { get; set; }
-        [Required]
         public TypeQuestion TypeQuestion { get; set; }
+        [Required]
         public int CategoryQuestionId { get; set; }
-        [Required]
         public CategoryQuestion CategoryQuestion { get; set; }
-        public int TopicQuestionId { get; set; }
         [Required]
+        public int TopicQuestionId { get; set; }
         public TopicQuestion TopicQuetion { get; set; }
+        [Required]
         public int TimeToAnswer { get; set; }
         [Required]
         public string Question { get; set; }

@@ -1,15 +1,3 @@
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.deps.json
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.dll
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.pdb
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csprojAssemblyReference.cache
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.AssemblyInfoInputs.cache
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.AssemblyInfo.cs
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csproj.CoreCompileInputs.cache
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csproj.CopyComplete
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.dll
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.pdb
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.deps.json
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.dll
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.pdb
@@ -22,3 +10,15 @@ C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMong
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csproj.CopyComplete
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.dll
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.deps.json
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csprojAssemblyReference.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.AssemblyInfoInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.AssemblyInfo.cs
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csproj.CoreCompileInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.csproj.CopyComplete
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.DataMongoDB\obj\Debug\netcoreapp3.1\EQUIZY.DataMongoDB.pdb

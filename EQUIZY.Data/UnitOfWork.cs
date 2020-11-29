@@ -25,6 +25,10 @@ namespace EQUIZY.Data
         private ITypeQuestionRepository _typesQuestionRepository;
         private IProfessorEvaluationListRepository _professorEvaluationListRepository;
         private IEvaluationRepository _evaluationRepository;
+        private IAnswerRepository _answerRepository;
+        private IAnswerListRepository _answerListRepository;
+        private IQuizQuestionRepository _quizQuestionRepository;
+        private IQuestionListRepository _questionListRepository;
 
         public UnitOfWork(MyEquizyDbContext context)
         {
@@ -44,7 +48,10 @@ namespace EQUIZY.Data
         public ITypeQuestionRepository TypesQuestion => _typesQuestionRepository = _typesQuestionRepository ?? new TypeQuestionRepository(_context);
         public IEvaluationRepository Evaluations => _evaluationRepository = _evaluationRepository ?? new EvaluationRepository(_context);
         public IProfessorEvaluationListRepository ProfessorEvaluationList => _professorEvaluationListRepository = _professorEvaluationListRepository ?? new ProfessorEvaluationListRepository(_context);
-
+        public IAnswerRepository Answers => _answerRepository = _answerRepository ?? new AnswerRepository(_context);
+        public IAnswerListRepository AnswerList => _answerListRepository = _answerListRepository ?? new AnswerListRepository(_context);
+        public IQuizQuestionRepository QuizQuestions => _quizQuestionRepository = _quizQuestionRepository ?? new QuizQuestionRepository(_context);
+        public IQuestionListRepository QuestionList => _questionListRepository = _questionListRepository ?? new QuestionListRepository(_context);
         public async Task<int> CommitAsync()
         {
             return await _context.SaveChangesAsync();

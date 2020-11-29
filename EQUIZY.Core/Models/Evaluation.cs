@@ -31,6 +31,6 @@ namespace EQUIZY.Core.Models
         public string Rules { get; set; }
         public byte Rating { get; set; }
         public byte Status { get; set; }
-        public List<EvaluationQuestion> EvaluationQuestions { get; set; }
+        public List<QuizQuestion> QuizQuestions { get; set; }
     }
 }

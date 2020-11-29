@@ -25,6 +25,10 @@ namespace EQUIZY.Data
         public DbSet<TypeQuestion> TypesQuestion { get; set; }
         public DbSet<Evaluation> Evaluations { get; set; }
         public DbSet<ProfessorEvaluationList> ProfessorEvaluationList { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<AnswerList> AnswerList { get; set; }
+        public DbSet<QuizQuestion> QuizQuestions { get; set; }
+        public DbSet<QuestionList> QuestionList { get; set; }
 
         public MyEquizyDbContext(DbContextOptions<MyEquizyDbContext> options) : base(options)
         {
@@ -51,6 +55,10 @@ namespace EQUIZY.Data
             builder.ApplyConfiguration(new TypeQuestionConfiguration());
             builder.ApplyConfiguration(new EvaluationConfiguration());
             builder.ApplyConfiguration(new ProfessorEvaluationListConfiguration());
+            builder.ApplyConfiguration(new AnswerConfiguration());
+            builder.ApplyConfiguration(new AnswerListConfiguration());
+            builder.ApplyConfiguration(new QuizQuestionConfiguration());
+            builder.ApplyConfiguration(new QuestionListConfiguration());
         }
     }
 }

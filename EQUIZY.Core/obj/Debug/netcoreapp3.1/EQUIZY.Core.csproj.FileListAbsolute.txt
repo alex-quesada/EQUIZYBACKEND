@@ -1,12 +1,3 @@
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.deps.json
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.AssemblyInfoInputs.cache
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.AssemblyInfo.cs
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.dll
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.pdb
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.csproj.CoreCompileInputs.cache
-C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.csprojAssemblyReference.cache
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.deps.json
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
@@ -16,3 +7,12 @@ C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\obj
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.csproj.CoreCompileInputs.cache
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.dll
 C:\Users\dev\Desktop\PROYECTOS U\PROGRA AVANZADA WEB\e-quizy-api\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.deps.json
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\bin\Debug\netcoreapp3.1\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.AssemblyInfoInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.AssemblyInfo.cs
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.csproj.CoreCompileInputs.cache
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.dll
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.pdb
+C:\Users\alexq\source\repos\EQUIZYAPITIER\EQUIZY.Core\obj\Debug\netcoreapp3.1\EQUIZY.Core.csprojAssemblyReference.cache

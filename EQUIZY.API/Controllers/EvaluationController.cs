@@ -23,6 +23,10 @@ namespace EQUIZY.API.Controllers
         private readonly ICategoryEvaluationService _categoryEvaluationService;
         private readonly UserManager<AppUser> _userManager;
         private readonly IEvaluationService _evaluationService;
+        private readonly IQuizQuestionService _quizQuestionService;
+        private readonly IQuestionListService _questionListService;
+        private readonly IAnswerService _answerService;
+        private readonly IAnswerListService _answerListService;
         private readonly IProfessorProfessorEvaluationListService _professorProfessorEvaluationListService;
 
         public EvaluationController(IMapper mapper, 
@@ -31,7 +35,11 @@ namespace EQUIZY.API.Controllers
             ICategoryEvaluationService categoryEvaluationService,
             UserManager<AppUser> userManager,
             IEvaluationService evaluationService,
-            IProfessorProfessorEvaluationListService professorProfessorEvaluationListService)
+            IProfessorProfessorEvaluationListService professorProfessorEvaluationListService,
+            IQuizQuestionService quizQuestionService,
+            IQuestionListService questionListService,
+            IAnswerListService answerListService,
+            IAnswerService answerService)
         {
             _mapper = mapper;
             _topicEvaluationService = topicEvaluationService;
@@ -39,6 +47,10 @@ namespace EQUIZY.API.Controllers
             _categoryEvaluationService = categoryEvaluationService;
             _userManager = userManager;
             _evaluationService = evaluationService;
+            _quizQuestionService = quizQuestionService;
+            _questionListService = questionListService;
+            _answerService = answerService;
+            _answerListService = answerListService;
             _professorProfessorEvaluationListService = professorProfessorEvaluationListService;
         }
         [HttpGet("data")]
@@ -119,6 +131,33 @@ namespace EQUIZY.API.Controllers
                 else { return BadRequest(); }
             }
             else { return BadRequest(); }
+        }
+        [HttpPost("question/create")]
+        public async Task<ActionResult<QuestionResource>> CreateQuestion([FromBody] CreateQuestionResource model)
+        {
+            foreach (var quest in model.Questions)
+            {
+                var questionToAdd = _mapper.Map<QuestionResource, QuizQuestion>(quest);
+                var questionResult = await _quizQuestionService.CreateQuestion(questionToAdd);
+                if (questionResult != null)
+                {
+                    foreach (var ans in quest.Answers)
+                    {
+                        var answerToAdd = _mapper.Map<AnswerResource, Answer>(ans);
+                        var answerResult = await _answerService.CreateAnswer(answerToAdd);
+                        if(answerResult != null)
+                        {
+                            var answerList = new AnswerList();
+                            answerList.AnswerId = answerToAdd.Id;
+                            answerList.QuizQuestionId = questionToAdd.Id;
+                            var answerListResult = await _answerListService.CreateAnswerList(answerList);
+                        }
+                        return BadRequest();
+                    }
+                }               
+                return BadRequest();
+            }
+            return Ok();
         }
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteEvaluation(int id)
