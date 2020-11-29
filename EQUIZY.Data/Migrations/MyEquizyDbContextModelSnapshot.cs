@@ -122,7 +122,7 @@ namespace EQUIZY.Data.Migrations
 
             modelBuilder.Entity("EQUIZY.Core.Models.AppUser", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
@@ -218,7 +218,7 @@ namespace EQUIZY.Data.Migrations
 
             modelBuilder.Entity("EQUIZY.Core.Models.AppUserRole", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
@@ -341,7 +341,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<int>("CategoryEvaluationId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.Property<string>("Description")
@@ -399,7 +400,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<byte>("Status")
                         .HasColumnType("tinyint unsigned");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
@@ -450,7 +452,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<int>("CategoryQuestionId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("CreatedById")
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.Property<int?>("EvaluationId")
@@ -628,7 +631,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<byte>("Status")
                         .HasColumnType("tinyint unsigned");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
@@ -652,7 +656,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("RoleId")
+                    b.Property<string>("RoleId")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
@@ -674,7 +679,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
@@ -695,7 +701,8 @@ namespace EQUIZY.Data.Migrations
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("char(36)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
@@ -707,10 +714,10 @@ namespace EQUIZY.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<string>("UserId")
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("RoleId")
+                    b.Property<string>("RoleId")
                         .HasColumnType("char(36)");
 
                     b.HasKey("UserId", "RoleId");
@@ -722,7 +729,7 @@ namespace EQUIZY.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<string>("UserId")
                         .HasColumnType("char(36)");
 
                     b.Property<string>("LoginProvider")

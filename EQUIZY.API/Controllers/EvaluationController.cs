@@ -143,24 +143,32 @@ namespace EQUIZY.API.Controllers
             {
                 var questionToAdd = _mapper.Map<QuestionResource, QuizQuestion>(quest);
                 questionToAdd.CreatedById = userGuid;
+                questionToAdd.Status = 1;
+                foreach (var ans in questionToAdd.Answers)
+                {
+                    ans.Status = 1;
+                }
                 var questionResult = await _quizQuestionService.CreateQuestion(questionToAdd);
                 if (questionResult != null)
                 {
-                    foreach (var ans in quest.Answers)
+                    var questionList = new QuestionList();
+
+                    questionList.EvaluationId = quest.EvaluationId;
+                    questionList.QuizQuestionId = questionResult.Id;
+                    questionList.Status = 1;
+                    await _questionListService.CreateQuestionList(questionList);
+                    foreach (var ans in questionResult.Answers)
                     {
-                        var answerToAdd = _mapper.Map<AnswerResource, Answer>(ans);
-                        var answerResult = await _answerService.CreateAnswer(answerToAdd);
-                        if(answerResult != null)
-                        {
                             var answerList = new AnswerList();
-                            answerList.AnswerId = answerToAdd.Id;
+                            answerList.AnswerId = ans.Id;
                             answerList.QuizQuestionId = questionToAdd.Id;
-                            var answerListResult = await _answerListService.CreateAnswerList(answerList);
-                        }
-                        return BadRequest();
+                            answerList.Status = 1;
+                            await _answerListService.CreateAnswerList(answerList);
                     }
+                }else
+                {
+                    return BadRequest();
                 }               
-                return BadRequest();
             }
             return Ok();
         }

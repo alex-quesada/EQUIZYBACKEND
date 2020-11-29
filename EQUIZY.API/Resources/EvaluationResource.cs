@@ -25,6 +25,7 @@ namespace EQUIZY.API.Resources
         [Required]
         [StringLength(255)]
         public string Rules { get; set; }
+        public List<QuestionResource> QuizQuestions { get; set; }
         public byte Rating { get; set; }
     }
 }
