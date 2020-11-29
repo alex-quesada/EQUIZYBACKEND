@@ -41,12 +41,12 @@ namespace EQUIZY.Data.Repositories
                 foreach (var ques in questionList)
                 {
                     var questionToAdd = await MyEquizyDbContext.QuizQuestions.FirstOrDefaultAsync(y => y.Id == ques.QuizQuestionId);
-                    var answerList = await MyEquizyDbContext.AnswerList.Where(l => l.QuizQuestionId == ques.Id && l.Status == 1).ToListAsync();
-                    foreach (var ans in answerList)
-                    {
-                        answers.Add(await MyEquizyDbContext.Answers.FirstOrDefaultAsync(p => p.Id == ans.AnswerId));
-                    }
-                    questionToAdd.Answers = answers;
+                    //var answerList = await MyEquizyDbContext.AnswerList.Where(l => l.QuizQuestionId == ques.Id && l.Status == 1).ToListAsync();
+                    //foreach (var ans in answerList)
+                    //{
+                    //    answers.Add(await MyEquizyDbContext.Answers.FirstOrDefaultAsync(p => p.Id == ans.AnswerId));
+                    //}
+                    //questionToAdd.Answers = answers;
                     questions.Add(questionToAdd);
 
                 }
