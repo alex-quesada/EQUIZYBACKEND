@@ -108,18 +108,7 @@ namespace EQUIZY.API.Controllers
                 return NotFound();
             }
             var evaluationResource = _mapper.Map<Evaluation, EvaluationResource>(evaluation);
-            var evaluationsData = new EvaluationWithInfoResource();
-            evaluationsData.Topics = _mapper.Map<
-                IEnumerable<TopicQuestion>, List<TopicQuestionResource>>(
-                await _topicQuestionService.GetAllTopicQuestion());
-            evaluationsData.Categories = _mapper.Map<
-                IEnumerable<CategoryQuestion>, List<CategoryQuestionResource>>(
-                await _categoryQuestionService.GetAllCategoryQuesation());
-            evaluationsData.Types = _mapper.Map<
-                IEnumerable<TypeQuestion>, List<TypeQuestionResource>>(
-                await _typeQuestionService.GetAllTypeQuestion());
-            evaluationsData.Evaluation = evaluationResource;
-            return Ok(evaluationsData);
+            return Ok(evaluationResource);
         }
         [HttpPost("create")]
         public async Task<ActionResult<EvaluationResource>> CreateEvaluation([FromBody] EvaluationResource model)
