@@ -172,6 +172,8 @@ namespace EQUIZY.API.Controllers
                         }
                         else
                         {
+                            newAns.QuizQuestionId = question.Id;
+                            newAns.Status = 1;
                             await _answerService.CreateAnswer(newAns);
                         }
                     }
