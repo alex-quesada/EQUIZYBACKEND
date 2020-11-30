@@ -25,6 +25,7 @@ namespace EQUIZY.Core.Models
         public string Question { get; set; }
         [Required]
         public int Points { get; set; }
+        public int EvaluationId { get; set; }
         public byte Rating { get; set; }
         public byte Status { get; set; }
         public List<Answer> Answers { get; set; }

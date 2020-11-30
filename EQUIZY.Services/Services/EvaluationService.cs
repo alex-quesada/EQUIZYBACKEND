@@ -43,7 +43,7 @@ namespace EQUIZY.Services.Services
 
         public async Task<Evaluation> GetEvaluationById(int id)
         {
-            return await _unitOfWork.Evaluations.GetByIdAsync(id);
+            return await _unitOfWork.Evaluations.GetEvaluationByIdAsync(id);
         }
 
         public async Task UpdateEvaluation(Evaluation evaluationToUpdate, Evaluation evaluation)
