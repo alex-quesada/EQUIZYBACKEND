@@ -62,8 +62,11 @@ namespace EQUIZY.API
             services.AddTransient<ICityService, CityService>();
             services.AddTransient<ITypeAddressService, TypeAddressService>();
             services.AddTransient<ITopicEvaluationService, TopicEvaluationService>();
+            services.AddTransient<ITopicQuestionService, TopicQuestionService>();
             services.AddTransient<ITypeEvaluationService, TypeEvaluationService>();
+            services.AddTransient<ITypeQuestionService, TypeQuestionService>();
             services.AddTransient<ICategoryEvaluationService, CategoryEvaluationService>();
+            services.AddTransient<ICategoryQuestionService, CategoryQuestionService>();
             services.AddTransient<IEvaluationService, EvaluationService>();
             services.AddTransient<IProfessorProfessorEvaluationListService, ProfessorEvaluationListService>();
             services.AddTransient<IQuizQuestionService, QuizQuestionService>();
