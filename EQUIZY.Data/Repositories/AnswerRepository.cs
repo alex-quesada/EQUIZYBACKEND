@@ -26,13 +26,7 @@ namespace EQUIZY.Data.Repositories
 
         public async Task<IEnumerable<Answer>> GetAllAnswersByQuestionId(int id)
         {
-            var answers = new List<Answer>();
-            var answerList = await MyEquizyDbContext.AnswerList.Where(x => x.QuizQuestionId == id && x.Status == 1).ToListAsync();
-            foreach (var ans in answerList)
-            {
-                answers.Add(await MyEquizyDbContext.Answers.SingleOrDefaultAsync(y => y.Id == ans.AnswerId));
-            }
-            return answers;
+            return await MyEquizyDbContext.Answers.SingleOrDefaultAsync(y => y.QuizQuestionId == id);
         }
 
         public async Task<Answer> GetAnswerByIdAsync(int id)
