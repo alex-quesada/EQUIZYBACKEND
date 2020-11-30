@@ -23,8 +23,11 @@ namespace EQUIZY.API.Mappings
             CreateMap<Address, SaveAddressResource>().ReverseMap();
             CreateMap<TypeAddress, TypeAddressResource>().ReverseMap();
             CreateMap<TypeEvaluation, TypeEvaluationResource>().ReverseMap();
+            CreateMap<TypeQuestion, TypeQuestionResource>().ReverseMap();
             CreateMap<TopicEvaluation, TopicEvaluationResource>().ReverseMap();
+            CreateMap<TopicQuestion, TopicQuestionResource>().ReverseMap();
             CreateMap<CategoryEvaluation, CategoryEvaluationResource>().ReverseMap();
+            CreateMap<CategoryQuestion, CategoryQuestionResource>().ReverseMap();
             CreateMap<Evaluation, EvaluationResource>().ReverseMap();
             CreateMap<QuizQuestion, QuestionResource>().ReverseMap();
             CreateMap<Answer, AnswerResource>().ReverseMap();
