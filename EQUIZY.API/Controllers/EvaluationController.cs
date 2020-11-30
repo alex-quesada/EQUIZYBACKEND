@@ -139,36 +139,28 @@ namespace EQUIZY.API.Controllers
             var userToken = new JwtSecurityTokenHandler().ReadJwtToken(token);
             var userId = userToken.Claims.ToArray()[0].Value.ToString();
             var userGuid = new Guid(userId);
+            
             foreach (var quest in model.Questions)
             {
-                var questionToAdd = _mapper.Map<QuestionResource, QuizQuestion>(quest);
-                questionToAdd.CreatedById = userGuid;
-                questionToAdd.Status = 1;
-                foreach (var ans in questionToAdd.Answers)
-                {
-                    ans.Status = 1;
-                }
-                var questionResult = await _quizQuestionService.CreateQuestion(questionToAdd);
-                if (questionResult != null)
-                {
-                    var questionList = new QuestionList();
+                if (quest.Id > 0) {
+                    var question = _mapper.Map<QuestionResource, QuizQuestion>(quest);
+                    var questionToUpdate = await _quizQuestionService.GetQuestionById(quest.Id);
+                    await _quizQuestionService.UpdateQuestion(questionToUpdate, question);
 
-                    questionList.EvaluationId = quest.EvaluationId;
-                    questionList.QuizQuestionId = questionResult.Id;
-                    questionList.Status = 1;
-                    await _questionListService.CreateQuestionList(questionList);
-                    foreach (var ans in questionResult.Answers)
-                    {
-                            var answerList = new AnswerList();
-                            answerList.AnswerId = ans.Id;
-                            answerList.QuizQuestionId = questionToAdd.Id;
-                            answerList.Status = 1;
-                            await _answerListService.CreateAnswerList(answerList);
-                    }
-                }else
+                }
+                else
                 {
-                    return BadRequest();
-                }               
+                    var questionToAdd = _mapper.Map<QuestionResource, QuizQuestion>(quest);
+                    questionToAdd.CreatedById = userGuid;
+                    questionToAdd.Status = 1;
+                    foreach (var ans in questionToAdd.Answers)
+                    {
+                        ans.Status = 1;
+                    }
+                    var questionResult = await _quizQuestionService.CreateQuestion(questionToAdd);
+                    if (questionResult == null)
+                        return BadRequest();
+                }
             }
             return Ok();
         }
