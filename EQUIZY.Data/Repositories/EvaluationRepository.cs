@@ -25,7 +25,7 @@ namespace EQUIZY.Data.Repositories
 
         public async Task<Evaluation> GetEvaluationByIdAsync(int id)
         {
-            return await MyEquizyDbContext.Evaluations.SingleOrDefaultAsync(a => a.Id == id);
+            return await MyEquizyDbContext.Evaluations.Include(a => a.QuizQuestions).ThenInclude(j => j.Answers).SingleOrDefaultAsync(a => a.Id == id);
         }
 
         public async Task<IEnumerable<Evaluation>> GetAllEvaluationsByUserId(Guid userId)
