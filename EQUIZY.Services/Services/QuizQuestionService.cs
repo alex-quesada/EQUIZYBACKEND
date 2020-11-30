@@ -55,7 +55,6 @@ namespace EQUIZY.Services.Services
             questionToUpdate.TopicQuestionId = question.TopicQuestionId;
             questionToUpdate.CategoryQuestionId = question.CategoryQuestionId;
             questionToUpdate.TypeQuestionId = question.TypeQuestionId;
-            questionToUpdate.Answers = question.Answers;
             await _unitOfWork.CommitAsync();
         }
     }

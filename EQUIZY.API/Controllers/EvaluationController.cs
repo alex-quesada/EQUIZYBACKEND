@@ -27,6 +27,9 @@ namespace EQUIZY.API.Controllers
         private readonly IQuestionListService _questionListService;
         private readonly IAnswerService _answerService;
         private readonly IAnswerListService _answerListService;
+        private readonly ICategoryQuestionService _categoryQuestionService;
+        private readonly ITopicQuestionService _topicQuestionService;
+        private readonly ITypeQuestionService _typeQuestionService;
         private readonly IProfessorProfessorEvaluationListService _professorProfessorEvaluationListService;
 
         public EvaluationController(IMapper mapper, 
@@ -39,6 +42,9 @@ namespace EQUIZY.API.Controllers
             IQuizQuestionService quizQuestionService,
             IQuestionListService questionListService,
             IAnswerListService answerListService,
+            ICategoryQuestionService categoryQuestionService,
+            ITopicQuestionService topicQuestionService,
+            ITypeQuestionService typeQuestionService,
             IAnswerService answerService)
         {
             _mapper = mapper;
@@ -51,6 +57,9 @@ namespace EQUIZY.API.Controllers
             _questionListService = questionListService;
             _answerService = answerService;
             _answerListService = answerListService;
+            this._categoryQuestionService = categoryQuestionService;
+            this._topicQuestionService = topicQuestionService;
+            this._typeQuestionService = typeQuestionService;
             _professorProfessorEvaluationListService = professorProfessorEvaluationListService;
         }
         [HttpGet("data")]
@@ -99,7 +108,18 @@ namespace EQUIZY.API.Controllers
                 return NotFound();
             }
             var evaluationResource = _mapper.Map<Evaluation, EvaluationResource>(evaluation);
-            return Ok(evaluationResource);
+            var evaluationsData = new EvaluationWithInfoResource();
+            evaluationsData.Topics = _mapper.Map<
+                IEnumerable<TopicQuestion>, List<TopicQuestionResource>>(
+                await _topicQuestionService.GetAllTopicQuestion());
+            evaluationsData.Categories = _mapper.Map<
+                IEnumerable<CategoryQuestion>, List<CategoryQuestionResource>>(
+                await _categoryQuestionService.GetAllCategoryQuesation());
+            evaluationsData.Types = _mapper.Map<
+                IEnumerable<TypeQuestion>, List<TypeQuestionResource>>(
+                await _typeQuestionService.GetAllTypeQuestion());
+            evaluationsData.Evaluation = evaluationResource;
+            return Ok(evaluationsData);
         }
         [HttpPost("create")]
         public async Task<ActionResult<EvaluationResource>> CreateEvaluation([FromBody] EvaluationResource model)
