@@ -148,14 +148,29 @@ namespace EQUIZY.API.Controllers
             var userToken = new JwtSecurityTokenHandler().ReadJwtToken(token);
             var userId = userToken.Claims.ToArray()[0].Value.ToString();
             var userGuid = new Guid(userId);
-            
+
             foreach (var quest in model.Questions)
             {
+                var question = _mapper.Map<QuestionResource, QuizQuestion>(quest);
+                var oldQuestions = await _quizQuestionService.GetAllQuestionsByEvaluationId(quest.Id);
+
+                await DeleteOldQuestions(oldQuestions, model);
+
                 if (quest.Id > 0) {
-                    var question = _mapper.Map<QuestionResource, QuizQuestion>(quest);
                     var questionToUpdate = await _quizQuestionService.GetQuestionById(quest.Id);
                     await _quizQuestionService.UpdateQuestion(questionToUpdate, question);
+                    var oldAnswers = await _answerService.GetAllAnswersByQuestionId(quest.Id);
 
+                    await DeleteOldAnswers(oldAnswers, question);
+
+                    foreach (var newAns in question.Answers)
+                    {
+                        if (newAns.Id > 0)
+                        {
+                            var answerToUpdate = await _answerService.GetAnswerById(newAns.Id);
+                            await _answerService.UpdateAnswer(answerToUpdate, newAns);
+                        }
+                    }
                 }
                 else
                 {
@@ -172,6 +187,30 @@ namespace EQUIZY.API.Controllers
                 }
             }
             return Ok();
+        }
+        private async Task DeleteOldQuestions(IEnumerable<QuizQuestion> oldQuestions, CreateQuestionResource model) 
+            {
+                foreach (var oldQuest in oldQuestions)
+                {
+                    if (model.Questions.IndexOf(_mapper.Map<QuizQuestion, QuestionResource>(oldQuest)) == -1)
+                    {
+                        foreach (var oldAns in oldQuest.Answers)
+                        {
+                            await _answerService.DeleteAnswer(oldAns);
+                        }
+                        await _quizQuestionService.DeleteQuestion(oldQuest);
+                    }
+                }
+            } 
+        private async Task DeleteOldAnswers(IEnumerable<Answer> oldAnswers, QuizQuestion question)
+        {
+            foreach (var oldAns in oldAnswers)
+            {
+                if (question.Answers.IndexOf(oldAns) == -1)
+                {
+                    await _answerService.DeleteAnswer(oldAns);
+                }
+            }
         }
         [HttpGet("/question/{id}")]
         public async Task<ActionResult<EvaluationResource>> GetQuestionById(int id)

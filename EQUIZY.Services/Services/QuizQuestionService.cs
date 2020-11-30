@@ -27,8 +27,7 @@ namespace EQUIZY.Services.Services
 
         public async Task DeleteQuestion(QuizQuestion question)
         {
-            var questionToDelete = await _unitOfWork.QuizQuestions.SingleOrDefaultAsync(m => m.Id == question.Id);
-            questionToDelete.Status = 2;
+            _unitOfWork.QuizQuestions.Remove(question);
             await _unitOfWork.CommitAsync();
         }
 

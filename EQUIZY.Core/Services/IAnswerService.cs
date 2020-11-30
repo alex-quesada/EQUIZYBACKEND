@@ -9,7 +9,7 @@ namespace EQUIZY.Core.Services
     public interface IAnswerService
     {
         Task<IEnumerable<Answer>> GetAllAnswers();
-        Task<IEnumerable<Answer>> GetAllAnswersByEvaluationId(int evaluationId);
+        Task<IEnumerable<Answer>> GetAllAnswersByQuestionId(int id);
         Task<Answer> GetAnswerById(int id);
         Task<Answer> CreateAnswer(Answer newAnswer);
         Task UpdateAnswer(Answer answerToUpdate, Answer answer);

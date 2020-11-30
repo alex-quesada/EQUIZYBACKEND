@@ -27,8 +27,7 @@ namespace EQUIZY.Services.Services
 
         public async Task DeleteAnswer(Answer answer)
         {
-            var answerToDelete = await _unitOfWork.Answers.SingleOrDefaultAsync(m => m.Id == answer.Id);
-            answerToDelete.Status = 2;
+            _unitOfWork.Answers.Remove(answer);
             await _unitOfWork.CommitAsync();
         }
 
@@ -37,7 +36,7 @@ namespace EQUIZY.Services.Services
             return await _unitOfWork.Answers.GetAllAsync();
         }
 
-        public async Task<IEnumerable<Answer>> GetAllAnswersByEvaluationId(int id)
+        public async Task<IEnumerable<Answer>> GetAllAnswersByQuestionId(int id)
         {
             return await _unitOfWork.Answers.GetAllAnswersByQuestionId(id);
         }
