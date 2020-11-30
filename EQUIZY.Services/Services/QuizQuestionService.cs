@@ -11,12 +11,10 @@ namespace EQUIZY.Services.Services
     public class QuizQuestionService : IQuizQuestionService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IAnswerService _answerService;
 
-        public QuizQuestionService(IUnitOfWork unitOfWork, IAnswerService answerService)
+        public QuizQuestionService(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork;
-            this._answerService = answerService;
         }
 
         public async Task<QuizQuestion> CreateQuestion(QuizQuestion question)
@@ -58,25 +56,6 @@ namespace EQUIZY.Services.Services
             questionToUpdate.CategoryQuestionId = question.CategoryQuestionId;
             questionToUpdate.TypeQuestionId = question.TypeQuestionId;
             questionToUpdate.Answers = question.Answers;
-            //var oldAnswers = await _answerService.GetAllAnswersByEvaluationId(question.Id);
-            foreach (var ans in questionToUpdate.Answers)
-            {
-                if (ans.Id > 0)
-                {
-                    var answerToUpdate = await _answerService.GetAnswerById(ans.Id);
-                    var answer = new Answer();
-                    answer.AnswerContent = ans.AnswerContent;
-                    answer.Correct = ans.Correct;
-                    await _answerService.UpdateAnswer(answerToUpdate, answer);
-                }
-                else
-                {
-                    var answer = new Answer();
-                    answer.AnswerContent = ans.AnswerContent;
-                    answer.Correct = ans.Correct;
-                    await _answerService.CreateAnswer(answer);
-                }
-            }
             await _unitOfWork.CommitAsync();
         }
     }
