@@ -44,7 +44,7 @@ namespace EQUIZY.Services.Services
 
         public async Task<QuizQuestion> GetQuestionById(int id)
         {
-            return await _unitOfWork.QuizQuestions.GetByIdAsync(id);
+            return await _unitOfWork.QuizQuestions.GetQuestionByIdAsync(id);
         }
 
         public async Task UpdateQuestion(QuizQuestion questionToUpdate, QuizQuestion question)

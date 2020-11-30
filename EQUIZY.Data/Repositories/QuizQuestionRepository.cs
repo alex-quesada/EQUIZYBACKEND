@@ -38,7 +38,7 @@ namespace EQUIZY.Data.Repositories
 
         public async Task<QuizQuestion> GetQuestionByIdAsync(int id)
         {
-            return await MyEquizyDbContext.QuizQuestions.SingleOrDefaultAsync(a => a.Id == id);
+            return await MyEquizyDbContext.QuizQuestions.Include(j => j.Answers).SingleOrDefaultAsync(a => a.Id == id);
         }
     }
 }

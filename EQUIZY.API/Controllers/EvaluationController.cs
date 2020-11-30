@@ -172,6 +172,17 @@ namespace EQUIZY.API.Controllers
             }
             return Ok();
         }
+        [HttpGet("/question/{id}")]
+        public async Task<ActionResult<EvaluationResource>> GetQuestionById(int id)
+        {
+            var question = await _quizQuestionService.GetQuestionById(id);
+            if (question == null)
+            {
+                return NotFound();
+            }
+            var questionResource = _mapper.Map<QuizQuestion, QuestionResource>(question);
+            return Ok(questionResource);
+        }
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteEvaluation(int id)
         {
