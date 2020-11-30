@@ -152,7 +152,7 @@ namespace EQUIZY.API.Controllers
             foreach (var quest in model.Questions)
             {
                 var question = _mapper.Map<QuestionResource, QuizQuestion>(quest);
-                var oldQuestions = await _quizQuestionService.GetAllQuestionsByEvaluationId(quest.Id);
+                var oldQuestions = await _quizQuestionService.GetAllQuestionsByEvaluationId(quest.EvaluationId);
 
                 await DeleteOldQuestions(oldQuestions, model);
 
@@ -182,6 +182,7 @@ namespace EQUIZY.API.Controllers
                 {
                     var questionToAdd = _mapper.Map<QuestionResource, QuizQuestion>(quest);
                     questionToAdd.CreatedById = userGuid;
+                    questionToAdd.EvaluationId = quest.EvaluationId;
                     questionToAdd.Status = 1;
                     foreach (var ans in questionToAdd.Answers)
                     {
@@ -198,9 +199,10 @@ namespace EQUIZY.API.Controllers
             {
                 foreach (var oldQuest in oldQuestions)
                 {
-                    if (model.Questions.IndexOf(_mapper.Map<QuizQuestion, QuestionResource>(oldQuest)) == -1)
+                var matches = model.Questions.Where(p => p.Id == oldQuest.Id).ToList();
+                    if (matches.Count == 0)
                     {
-                    await DeleteOldAnswers(oldQuest.Answers, oldQuest);
+                    await _quizQuestionService.DeleteQuestion(oldQuest);
                     }
                 }
             } 
@@ -208,7 +210,8 @@ namespace EQUIZY.API.Controllers
         {
             foreach (var oldAns in oldAnswers)
             {
-                if (question.Answers.IndexOf(oldAns) == -1)
+                var matches = question.Answers.Where(a => a.Id == oldAns.Id).ToList();
+                if (matches.Count == 0)
                 {
                     await _answerService.DeleteAnswer(oldAns);
                 }
