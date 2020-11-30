@@ -159,8 +159,8 @@ namespace EQUIZY.API.Controllers
                 if (quest.Id > 0) {
                     var questionToUpdate = await _quizQuestionService.GetQuestionById(quest.Id);
                     await _quizQuestionService.UpdateQuestion(questionToUpdate, question);
-                    var oldAnswers = await _answerService.GetAllAnswersByQuestionId(quest.Id);
 
+                    var oldAnswers = await _answerService.GetAllAnswersByQuestionId(quest.Id);
                     await DeleteOldAnswers(oldAnswers, question);
 
                     foreach (var newAns in question.Answers)
@@ -169,6 +169,10 @@ namespace EQUIZY.API.Controllers
                         {
                             var answerToUpdate = await _answerService.GetAnswerById(newAns.Id);
                             await _answerService.UpdateAnswer(answerToUpdate, newAns);
+                        }
+                        else
+                        {
+                            await _answerService.CreateAnswer(newAns);
                         }
                     }
                 }
@@ -194,11 +198,7 @@ namespace EQUIZY.API.Controllers
                 {
                     if (model.Questions.IndexOf(_mapper.Map<QuizQuestion, QuestionResource>(oldQuest)) == -1)
                     {
-                        foreach (var oldAns in oldQuest.Answers)
-                        {
-                            await _answerService.DeleteAnswer(oldAns);
-                        }
-                        await _quizQuestionService.DeleteQuestion(oldQuest);
+                    await DeleteOldAnswers(oldQuest.Answers, oldQuest);
                     }
                 }
             } 
